@@ -1,0 +1,70 @@
+This package contains projutils.el
+
+* Info
+
+  + Author: Fabián Ezequiel Gallina
+  + Contact: fabian at anue dot biz
+  + Project homepage: http://github.com/fgallina/projutils.el
+  + My Blog: http://www.from-the-cloud.com
+  + Downloads page: http://github.com/fgallina/projutils.el/downloads
+
+* Introduction
+
+  This minor mode provides some nice project related facilities. For
+  make them work it looks for your .dir-locals.el file and considers
+  that as the project's root (You can also specify the project root by
+  setting the `projutils-project-root-path' variable).
+
+  Currently it implements:
+
+   + File browser from project's root.
+   + Grep/Ack from project's root.
+   + Find file in project.
+
+* Requirements
+
+  This package was tested with GNU/Emacs 23 only, it should work with
+  others versions too but I can't ensure anything. Besides from that
+  nothing else is required.
+
+  Recommended optional requirements are `full-ack' and `sr-speedbar'.
+
+* Installation/Usage
+
+  Add this to your .emacs:
+
+  #+BEGIN_EXAMPLE
+  (add-to-list 'load-path "/folder/containing/file")
+  (require 'projutils)
+  (projutils-global-mode 1)
+  #+END_EXAMPLE
+
+  Browse project files from root folder: Using speedbar or, if
+  available, sr-speedbar.  In the case both are present you can
+  control if sr-speedbar should have precedence via the
+  `projutils-use-sr-speedbar' variable.
+
+  Grep files from the root folder: Using rgrep or, if available, ack
+  (from full-ack package).  In the case both are present you can
+  control if ack should have precedence via the `projutils-use-ack'
+  variable.
+
+  Find file in project: The list of files is generated from the
+  project root and you can control what should be filtered by setting
+  the `projutils-ffip-ignored-dirs', `projutils-ffip-ignored-files',
+  `projutils-ffip-allowed-file-extensions',
+  `projutils-ffip-ignored-file-extensions',
+  `projutils-ffip-ignored-regexps' variables.
+
+  Type *M-x describe-function RET projutils-mode* to check available
+  key bindings.
+
+* Bug Reports
+
+  If you find a bug please report it sending an email listed in the
+  top of the file or just use the github tracker.
+
+* License
+
+  projutils.el is free software under the GPL v3, see LICENSE file for
+  details.
