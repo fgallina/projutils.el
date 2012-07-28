@@ -201,7 +201,7 @@ Argument REGEXP is the regular expresion to search with."
   (interactive (list (if (projutils-grep-use-ack-p)
                          (let ((regexp (ack-xor current-prefix-arg
                                                 ack-search-regexp)))
-                           (ack-read regexp))
+                           (ack--read regexp))
                        (grep-read-regexp))))
   (let ((default-directory (projutils-get-root-dir)))
     (if (projutils-grep-use-ack-p)
